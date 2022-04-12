@@ -4,11 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Align</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <h1>Register</h1>
 <section>
 </media>
 <section>
@@ -82,13 +80,31 @@
  <select name="country">
      <option value="southafrica">South Africa</option>
      <Option value="france">France</Option>
- </selectd>
+ </select>
 </div>
 <br>
 <div>
-     <input type="submit">
+     <input type="submit" value="save">
 </div>
     </form>
 </section>
 </body>
 </html>
+
+<?php
+extract($_REQUEST);
+$file=fopen("Information.txt","a");
+
+fwrite($file,"name:");
+fwrite($file,$name,"\n");
+fwrite($file,"surname:");
+fwrite($file,$surname,"\n");
+fwrite($file,"age:");
+fwrite($file,$age,"\n");
+fwrite($file,"dob:");
+fwrite($file,$dob,"\n");
+fwrite($file,"password:");
+fwrite($file,$password,"\n");
+fsclose($file);
+
+?>
